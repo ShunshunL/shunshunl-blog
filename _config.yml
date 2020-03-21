@@ -17,17 +17,21 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+texture:
+  title: Shunshun Lyu
+  tagline: Full Stack Developer
+  date_format: "%b %-d, %Y"
+  style: black
+  showNav: false
+  showPicker: false
+  texture: black
 
-title: Shunshun's Blog
-email: shunshunlyu@protonmail.com
-description: >- # this means to ignore newlines until "baseurl:" # SEO
-  This is a space where I keep a record of my learning through the hardship of computer science. I hope people find my blog helpful and informative about learning how to code. 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  shunshunl
-
+  social_links:
+    github:  shunshunl
+show_excerpts: true
 # Build settings
-theme: minima
+# theme: minima
+theme: texture
 plugins:
   - jekyll-feed
 

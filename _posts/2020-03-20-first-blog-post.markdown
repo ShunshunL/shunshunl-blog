@@ -4,12 +4,12 @@ title:  "Welcome to my blog"
 date:   2020-03-20 16:30:50 -0700
 ---
 
-## This is going to be some tips for myself
+### This is going to be some tips for myself
 
-# How to rebuild
+#### How to rebuild
 jekyll serve
 
-# File name format
+#### File name format
 
 YEAR-MONTH-DAY-title.MARKUP
 
