@@ -7,3 +7,5 @@ Hi! I'm Shunshun. This is my blog that I just created. I made it with Jekyll and
 
 *Thanks for reading my first post!*  
 *-Shunshun*
+
+<br/>
