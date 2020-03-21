@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-20T17:03:11-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shunshun’s Blog</title><subtitle>This is a space where I keep a record of my learning through the hardship of computer science. I hope people find my blog helpful and informative about learning how to code. </subtitle><entry><title type="html">Welcome to my blog</title><link href="http://localhost:4000/2020/03/20/first-blog-post.html" rel="alternate" type="text/html" title="Welcome to my blog" /><published>2020-03-20T16:30:50-07:00</published><updated>2020-03-20T16:30:50-07:00</updated><id>http://localhost:4000/2020/03/20/first-blog-post</id><content type="html" xml:base="http://localhost:4000/2020/03/20/first-blog-post.html">&lt;h2 id=&quot;this-is-going-to-be-some-tips-for-myself&quot;&gt;This is going to be some tips for myself&lt;/h2&gt;
+
+&lt;h1 id=&quot;how-to-rebuild&quot;&gt;How to rebuild&lt;/h1&gt;
+&lt;p&gt;jekyll serve&lt;/p&gt;
+
+&lt;h1 id=&quot;file-name-format&quot;&gt;File name format&lt;/h1&gt;
+
+&lt;p&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/p&gt;
+
+&lt;h4 id=&quot;code-snippet&quot;&gt;Code snippet&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><summary type="html">This is going to be some tips for myself</summary></entry></feed>
