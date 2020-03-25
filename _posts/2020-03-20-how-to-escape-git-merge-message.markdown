@@ -3,6 +3,7 @@ layout: post
 title: "How to escape git merge message"
 ---
 I got stuck in the terminal today and was forced to restart it because when I tried to merge my latest changes Git told me I need to pull my master branch down. And when I did, this happened:
+
 ![image of the terminal](/assets/merge_message.png)
 I had never seen this before and I tried to type q/quit/enter. None of them worked. I turned to my good friend Google and googled around for a bit. And I realized it's a process to escape this state. Here's what I found:
 

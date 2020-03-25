@@ -1,10 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-20T20:37:04-07:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Welcome to my blog</title><link href="http://localhost:4000/2020/03/20/first-blog-post.html" rel="alternate" type="text/html" title="Welcome to my blog" /><published>2020-03-20T16:30:50-07:00</published><updated>2020-03-20T16:30:50-07:00</updated><id>http://localhost:4000/2020/03/20/first-blog-post</id><content type="html" xml:base="http://localhost:4000/2020/03/20/first-blog-post.html">&lt;p&gt;Hi! I’m Shunshun. This is my blog that I just created. I made it with Jekyll and GitHub Pages. And it was really fun! I think the main reason I’m writing this blog would be because I want to solidify my learning and maybe people could find it helpful to their journey through software developing too. I’m going to write each blog post of mine with a specific topic related to what I had learned that day/week. This way, everything will be organized and easy to find.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-25T09:38:31-07:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Variable scope in Ruby</title><link href="http://localhost:4000/2020/03/24/variable-scope-in-ruby.html" rel="alternate" type="text/html" title="Variable scope in Ruby" /><published>2020-03-24T00:00:00-07:00</published><updated>2020-03-24T00:00:00-07:00</updated><id>http://localhost:4000/2020/03/24/variable-scope-in-ruby</id><content type="html" xml:base="http://localhost:4000/2020/03/24/variable-scope-in-ruby.html">&lt;p&gt;I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The narrowest the better. Right?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;But what are some examples that would make this theory more actionable?&lt;/p&gt;
+
+&lt;h3 id=&quot;local-variable-scope&quot;&gt;Local Variable Scope&lt;/h3&gt;
+
+&lt;p&gt;This have the narrowest scope:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = 50
+
+def money 
+  a = 80 
+  puts a #This will return 80
+end 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Local variable&lt;/strong&gt; basically means it won’t look at outside the method. When the method finishes executing, you won’t be able to access the variables inside anymore.&lt;/p&gt;
+
+&lt;h3 id=&quot;instance-variable-scope&quot;&gt;Instance Variable Scope&lt;/h3&gt;
+
+&lt;p&gt;This have a wider scope:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Money 
+  def more_money 
+    @quantity = 80 
+  end 
+
+  def less_money 
+    @quantity = 50 
+  end 
+end 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here, &lt;strong&gt;@quantity&lt;/strong&gt; is shared between both methods.&lt;/p&gt;
+
+&lt;p&gt;Essentially, @quantity is only living in this class.&lt;/p&gt;
+
+&lt;h3 id=&quot;block-scope&quot;&gt;Block Scope&lt;/h3&gt;
+
+&lt;p&gt;This is the most confusing part for me to understand, but I’ll try to keep it short.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Local variables created in the blocks are not avaliable outside them.&lt;/li&gt;
+  &lt;li&gt;Variables created outside the blocks can be accessed within the blocks.&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?</summary></entry><entry><title type="html">Welcome to my blog</title><link href="http://localhost:4000/2020/03/20/first-blog-post.html" rel="alternate" type="text/html" title="Welcome to my blog" /><published>2020-03-20T00:00:00-07:00</published><updated>2020-03-20T00:00:00-07:00</updated><id>http://localhost:4000/2020/03/20/first-blog-post</id><content type="html" xml:base="http://localhost:4000/2020/03/20/first-blog-post.html">&lt;p&gt;Hi! I’m Shunshun. This is my blog that I just created. I made it with Jekyll and GitHub Pages. And it was really fun! I think the main reason I’m writing this blog would be because I want to solidify my learning and maybe people could find it helpful to their journey through software developing too. I’m going to write each blog post of mine with a specific topic related to what I had learned that day/week. This way, everything will be organized and easy to find.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Thanks for reading my first post!&lt;/em&gt;&lt;br /&gt;
 &lt;em&gt;-Shunshun&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Hi! I’m Shunshun. This is my blog that I just created. I made it with Jekyll and GitHub Pages. And it was really fun! I think the main reason I’m writing this blog would be because I want to solidify my learning and maybe people could find it helpful to their journey through software developing too. I’m going to write each blog post of mine with a specific topic related to what I had learned that day/week. This way, everything will be organized and easy to find.</summary></entry><entry><title type="html">How to escape git merge message</title><link href="http://localhost:4000/2020/03/20/how-to-escape-git-merge-message.html" rel="alternate" type="text/html" title="How to escape git merge message" /><published>2020-03-20T00:00:00-07:00</published><updated>2020-03-20T00:00:00-07:00</updated><id>http://localhost:4000/2020/03/20/how-to-escape-git-merge-message</id><content type="html" xml:base="http://localhost:4000/2020/03/20/how-to-escape-git-merge-message.html">&lt;p&gt;I got stuck in the terminal today and was forced to restart it because when I tried to merge my latest changes Git told me I need to pull my master branch down. And when I did, this happened:
-&lt;img src=&quot;/assets/merge_message.png&quot; alt=&quot;image of the terminal&quot; /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Hi! I’m Shunshun. This is my blog that I just created. I made it with Jekyll and GitHub Pages. And it was really fun! I think the main reason I’m writing this blog would be because I want to solidify my learning and maybe people could find it helpful to their journey through software developing too. I’m going to write each blog post of mine with a specific topic related to what I had learned that day/week. This way, everything will be organized and easy to find.</summary></entry><entry><title type="html">How to escape git merge message</title><link href="http://localhost:4000/2020/03/20/how-to-escape-git-merge-message.html" rel="alternate" type="text/html" title="How to escape git merge message" /><published>2020-03-20T00:00:00-07:00</published><updated>2020-03-20T00:00:00-07:00</updated><id>http://localhost:4000/2020/03/20/how-to-escape-git-merge-message</id><content type="html" xml:base="http://localhost:4000/2020/03/20/how-to-escape-git-merge-message.html">&lt;p&gt;I got stuck in the terminal today and was forced to restart it because when I tried to merge my latest changes Git told me I need to pull my master branch down. And when I did, this happened:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/merge_message.png&quot; alt=&quot;image of the terminal&quot; /&gt;
 I had never seen this before and I tried to type q/quit/enter. None of them worked. I turned to my good friend Google and googled around for a bit. And I realized it’s a process to escape this state. Here’s what I found:&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;If you want to enter your own merge message you need to follow these two steps before the next:&lt;/strong&gt;&lt;/p&gt;
@@ -23,4 +71,4 @@ I had never seen this before and I tried to type q/quit/enter. None of them work
 &lt;p&gt;&lt;em&gt;Hope that was informative and help solved your issue! :)&lt;/em&gt;&lt;br /&gt;
 &lt;em&gt;-Shunshun&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">I got stuck in the terminal today and was forced to restart it because when I tried to merge my latest changes Git told me I need to pull my master branch down. And when I did, this happened: I had never seen this before and I tried to type q/quit/enter. None of them worked. I turned to my good friend Google and googled around for a bit. And I realized it’s a process to escape this state. Here’s what I found:</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">I got stuck in the terminal today and was forced to restart it because when I tried to merge my latest changes Git told me I need to pull my master branch down. And when I did, this happened:</summary></entry></feed>

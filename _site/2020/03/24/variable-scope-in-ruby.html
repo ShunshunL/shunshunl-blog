@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Variable scope in Ruby</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Variable scope in Ruby</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Variable scope in Ruby" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?" />
+<meta property="og:description" content="I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?" />
+<link rel="canonical" href="http://localhost:4000/2020/03/24/variable-scope-in-ruby.html" />
+<meta property="og:url" content="http://localhost:4000/2020/03/24/variable-scope-in-ruby.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-24T00:00:00-07:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"http://localhost:4000/2020/03/24/variable-scope-in-ruby.html","headline":"Variable scope in Ruby","dateModified":"2020-03-24T00:00:00-07:00","datePublished":"2020-03-24T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/03/24/variable-scope-in-ruby.html"},"description":"I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="texture-black">
+    <div class="container"></div><div class="container">
+	<h1>Variable scope in Ruby</h1>
+	<h4 class="post-description"></h4>
+	<div class="post-date" style="margin-top:20px">
+		Published on Mar 24, 2020
+	</div>
+	<ul class="post-tags"></ul>
+</div>
+</header>
+  <main>
+    <div class="container">
+      <div class="post-container">
+          <p>I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?</p>
+
+<p><em>The narrowest the better. Right?</em></p>
+
+<p>But what are some examples that would make this theory more actionable?</p>
+
+<h3 id="local-variable-scope">Local Variable Scope</h3>
+
+<p>This have the narrowest scope:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 50
+
+def money 
+  a = 80 
+  puts a #This will return 80
+end 
+</code></pre></div></div>
+
+<p><strong>Local variable</strong> basically means it won’t look at outside the method. When the method finishes executing, you won’t be able to access the variables inside anymore.</p>
+
+<h3 id="instance-variable-scope">Instance Variable Scope</h3>
+
+<p>This have a wider scope:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Money 
+  def more_money 
+    @quantity = 80 
+  end 
+
+  def less_money 
+    @quantity = 50 
+  end 
+end 
+</code></pre></div></div>
+
+<p>Here, <strong>@quantity</strong> is shared between both methods.</p>
+
+<p>Essentially, @quantity is only living in this class.</p>
+
+<h3 id="block-scope">Block Scope</h3>
+
+<p>This is the most confusing part for me to understand, but I’ll try to keep it short.</p>
+
+<ul>
+  <li>Local variables created in the blocks are not avaliable outside them.</li>
+  <li>Variables created outside the blocks can be accessed within the blocks.</li>
+  <li></li>
+</ul>
+
+
+      </div>
+
+        <!-- Configure Disqus --></div>
+  </main></body>
+</html>
