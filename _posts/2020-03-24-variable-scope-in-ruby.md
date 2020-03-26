@@ -12,12 +12,14 @@ But what are some examples that would make this theory more actionable?
 
 This have the narrowest scope: 
 
-    a = 50
+{% highlight ruby %}
+a = 50
 
-    def money 
-      a = 80 
-      puts a #This will return 80
-    end 
+def money 
+  a = 80 
+  puts a #This will return 80
+end 
+{% endhighlight %}
 
 **Local variable** basically means it won't look at outside the method. When the method finishes executing, you won't be able to access the variables inside anymore.
 
@@ -25,19 +27,21 @@ This have the narrowest scope:
 
 This have a wider scope: 
 
-    class Money 
-      def more_money 
-        @quantity = 80 
-      end 
+{% highlight ruby %}
+class Money 
+  def more_money 
+    @quantity = 80 
+  end 
 
-      def less_money 
-        @quantity = 50 
-      end 
-    end 
+  def less_money 
+    @quantity = 50 
+  end 
+end 
+{% endhighlight %}
 
-Here, **@quantity** is shared between both methods.
+Here, `@quantity` is shared between both methods.
 
-Essentially, @quantity is only living in this class. 
+Essentially, `@quantity` is only living in this class. 
 
 ### Block Scope
 

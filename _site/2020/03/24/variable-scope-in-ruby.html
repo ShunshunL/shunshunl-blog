@@ -45,13 +45,12 @@
 
 <p>This have the narrowest scope:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 50
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">a</span> <span class="o">=</span> <span class="mi">50</span>
 
-def money 
-  a = 80 
-  puts a #This will return 80
-end 
-</code></pre></div></div>
+<span class="k">def</span> <span class="nf">money</span> 
+  <span class="n">a</span> <span class="o">=</span> <span class="mi">80</span> 
+  <span class="nb">puts</span> <span class="n">a</span> <span class="c1">#This will return 80</span>
+<span class="k">end</span> </code></pre></figure>
 
 <p><strong>Local variable</strong> basically means it won’t look at outside the method. When the method finishes executing, you won’t be able to access the variables inside anymore.</p>
 
@@ -59,30 +58,32 @@ end
 
 <p>This have a wider scope:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Money 
-  def more_money 
-    @quantity = 80 
-  end 
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Money</span> 
+  <span class="k">def</span> <span class="nf">more_money</span> 
+    <span class="vi">@quantity</span> <span class="o">=</span> <span class="mi">80</span> 
+  <span class="k">end</span> 
 
-  def less_money 
-    @quantity = 50 
-  end 
-end 
-</code></pre></div></div>
+  <span class="k">def</span> <span class="nf">less_money</span> 
+    <span class="vi">@quantity</span> <span class="o">=</span> <span class="mi">50</span> 
+  <span class="k">end</span> 
+<span class="k">end</span> </code></pre></figure>
 
-<p>Here, <strong>@quantity</strong> is shared between both methods.</p>
+<p>Here, <code class="highlighter-rouge">@quantity</code> is shared between both methods.</p>
 
-<p>Essentially, @quantity is only living in this class.</p>
+<p>Essentially, <code class="highlighter-rouge">@quantity</code> is only living in this class.</p>
 
 <h3 id="block-scope">Block Scope</h3>
 
-<p>This is the most confusing part for me to understand, but I’ll try to keep it short.</p>
-
 <ul>
   <li>Local variables created in the blocks are not avaliable outside them.</li>
-  <li>Variables created outside the blocks can be accessed within the blocks.</li>
-  <li></li>
+  <li>Variables created outside the blocks can be accessed and overridden within the blocks.</li>
 </ul>
+
+<p>I think I understood more about scopes after writing this blog. It solidified some of my disconnected knowledge pieces. Everything seems pretty intuitive now. Hope that was useful to you as well.</p>
+
+<p><em>-Shunshun</em></p>
+
+<p><br /></p>
 
 
       </div>

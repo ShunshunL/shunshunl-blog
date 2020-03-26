@@ -1,3 +1,3 @@
-# This is my github pages for my blog:
+# This is my blog:
 
-**https://shunshunl.github.io/**
+**https://www.shunshunl.com/**

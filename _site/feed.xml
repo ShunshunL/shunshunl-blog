@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-25T09:38:31-07:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Variable scope in Ruby</title><link href="http://localhost:4000/2020/03/24/variable-scope-in-ruby.html" rel="alternate" type="text/html" title="Variable scope in Ruby" /><published>2020-03-24T00:00:00-07:00</published><updated>2020-03-24T00:00:00-07:00</updated><id>http://localhost:4000/2020/03/24/variable-scope-in-ruby</id><content type="html" xml:base="http://localhost:4000/2020/03/24/variable-scope-in-ruby.html">&lt;p&gt;I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-25T17:50:29-07:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Variable scope in Ruby</title><link href="http://localhost:4000/2020/03/24/variable-scope-in-ruby.html" rel="alternate" type="text/html" title="Variable scope in Ruby" /><published>2020-03-24T00:00:00-07:00</published><updated>2020-03-24T00:00:00-07:00</updated><id>http://localhost:4000/2020/03/24/variable-scope-in-ruby</id><content type="html" xml:base="http://localhost:4000/2020/03/24/variable-scope-in-ruby.html">&lt;p&gt;I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;The narrowest the better. Right?&lt;/em&gt;&lt;/p&gt;
 
@@ -8,13 +8,12 @@
 
 &lt;p&gt;This have the narrowest scope:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = 50
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
 
-def money 
-  a = 80 
-  puts a #This will return 80
-end 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;money&lt;/span&gt; 
+  &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt; 
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#This will return 80&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Local variable&lt;/strong&gt; basically means it won’t look at outside the method. When the method finishes executing, you won’t be able to access the variables inside anymore.&lt;/p&gt;
 
@@ -22,30 +21,32 @@ end
 
 &lt;p&gt;This have a wider scope:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Money 
-  def more_money 
-    @quantity = 80 
-  end 
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Money&lt;/span&gt; 
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;more_money&lt;/span&gt; 
+    &lt;span class=&quot;vi&quot;&gt;@quantity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt; 
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; 
 
-  def less_money 
-    @quantity = 50 
-  end 
-end 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;less_money&lt;/span&gt; 
+    &lt;span class=&quot;vi&quot;&gt;@quantity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt; 
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Here, &lt;strong&gt;@quantity&lt;/strong&gt; is shared between both methods.&lt;/p&gt;
+&lt;p&gt;Here, &lt;code class=&quot;highlighter-rouge&quot;&gt;@quantity&lt;/code&gt; is shared between both methods.&lt;/p&gt;
 
-&lt;p&gt;Essentially, @quantity is only living in this class.&lt;/p&gt;
+&lt;p&gt;Essentially, &lt;code class=&quot;highlighter-rouge&quot;&gt;@quantity&lt;/code&gt; is only living in this class.&lt;/p&gt;
 
 &lt;h3 id=&quot;block-scope&quot;&gt;Block Scope&lt;/h3&gt;
 
-&lt;p&gt;This is the most confusing part for me to understand, but I’ll try to keep it short.&lt;/p&gt;
-
 &lt;ul&gt;
   &lt;li&gt;Local variables created in the blocks are not avaliable outside them.&lt;/li&gt;
-  &lt;li&gt;Variables created outside the blocks can be accessed within the blocks.&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?</summary></entry><entry><title type="html">Welcome to my blog</title><link href="http://localhost:4000/2020/03/20/first-blog-post.html" rel="alternate" type="text/html" title="Welcome to my blog" /><published>2020-03-20T00:00:00-07:00</published><updated>2020-03-20T00:00:00-07:00</updated><id>http://localhost:4000/2020/03/20/first-blog-post</id><content type="html" xml:base="http://localhost:4000/2020/03/20/first-blog-post.html">&lt;p&gt;Hi! I’m Shunshun. This is my blog that I just created. I made it with Jekyll and GitHub Pages. And it was really fun! I think the main reason I’m writing this blog would be because I want to solidify my learning and maybe people could find it helpful to their journey through software developing too. I’m going to write each blog post of mine with a specific topic related to what I had learned that day/week. This way, everything will be organized and easy to find.&lt;/p&gt;
+  &lt;li&gt;Variables created outside the blocks can be accessed and overridden within the blocks.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I think I understood more about scopes after writing this blog. It solidified some of my disconnected knowledge pieces. Everything seems pretty intuitive now. Hope that was useful to you as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;-Shunshun&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed?</summary></entry><entry><title type="html">Welcome to my blog</title><link href="http://localhost:4000/2020/03/20/first-blog-post.html" rel="alternate" type="text/html" title="Welcome to my blog" /><published>2020-03-20T00:00:00-07:00</published><updated>2020-03-20T00:00:00-07:00</updated><id>http://localhost:4000/2020/03/20/first-blog-post</id><content type="html" xml:base="http://localhost:4000/2020/03/20/first-blog-post.html">&lt;p&gt;Hi! I’m Shunshun. This is my blog that I just created. I made it with Jekyll and GitHub Pages. And it was really fun! I think the main reason I’m writing this blog would be because I want to solidify my learning and maybe people could find it helpful to their journey through software developing too. I’m going to write each blog post of mine with a specific topic related to what I had learned that day/week. This way, everything will be organized and easy to find.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Thanks for reading my first post!&lt;/em&gt;&lt;br /&gt;
 &lt;em&gt;-Shunshun&lt;/em&gt;&lt;/p&gt;
