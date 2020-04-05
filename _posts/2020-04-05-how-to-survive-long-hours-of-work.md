@@ -15,7 +15,7 @@ This week, the toll of overworking finally caught up to me. I felt tired and exh
 #### Automate your life: 
 
 - Get a wireless charging pad for your phone if you're the type of person like me where you forget to plug in your phone at night
-- Have reminders set for things you don't want to clutter your brains with
+- Have reminders set for things you don't want to clutter your mind with
 - Have a work timer so that you can take breaks promptly
 
 #### Personal activities: 
