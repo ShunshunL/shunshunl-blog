@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to escape git merge message"
+title: "How to Escape Git Merge Message"
 ---
 I got stuck in the terminal today and was forced to restart it because when I tried to merge my latest changes Git told me I need to pull my master branch down. And when I did, this happened:
 

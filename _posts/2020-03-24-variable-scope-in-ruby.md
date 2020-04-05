@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "Variable scope in Ruby"
+title: "Variable Scope in Ruby"
 ---
 I had this question in my head today when I was coding up my first CLI application: What variable do I need based on the scope needed? 
 
