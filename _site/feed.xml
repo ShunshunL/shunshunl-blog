@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-05T13:49:35-07:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">How to Survive Long Hours of Work</title><link href="http://localhost:4000/2020/04/05/how-to-survive-long-hours-of-work.html" rel="alternate" type="text/html" title="How to Survive Long Hours of Work" /><published>2020-04-05T00:00:00-07:00</published><updated>2020-04-05T00:00:00-07:00</updated><id>http://localhost:4000/2020/04/05/how-to-survive-long-hours-of-work</id><content type="html" xml:base="http://localhost:4000/2020/04/05/how-to-survive-long-hours-of-work.html">&lt;p&gt;This week, the toll of overworking finally caught up to me. I felt tired and exhausted by the end of the week. I want to micro improve my life so that I can cope with it better because coding from the time you get up till you go to sleep seems like it’s destroying my health.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-10T13:58:04-07:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Lambda Explained</title><link href="http://localhost:4000/2020/04/10/lambda-explained.html" rel="alternate" type="text/html" title="Lambda Explained" /><published>2020-04-10T00:00:00-07:00</published><updated>2020-04-10T00:00:00-07:00</updated><id>http://localhost:4000/2020/04/10/lambda-explained</id><content type="html" xml:base="http://localhost:4000/2020/04/10/lambda-explained.html">&lt;p&gt;I had my first encounter with lambda the other day when I was coding out my portfolio project and was very intrigued by it. Not going to lie, the reason was that it has a very funny name. I decided to do some investigation to get to know it a little bit more.&lt;/p&gt;
+
+&lt;h2 id=&quot;an-introduction-to-lambda&quot;&gt;An Introduction to Lambda&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;lambda&lt;/strong&gt; is a way to define a block and parameters with “= -&amp;gt;” syntax.&lt;/p&gt;
+
+&lt;p&gt;Interestingly, defining a lambda won’t run the code inside, you have to use the &lt;strong&gt;call&lt;/strong&gt; method.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;For example:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;n&quot;&gt;my_lambda&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;This is a lambda&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;my_lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# &quot;This is a lambda&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;lambda-can-also-take-arguments&quot;&gt;Lambda can also take arguments:&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;n&quot;&gt;divides_by_two&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;divides_by_two&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# 2.5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;
+😎 Very cool. I just found a new way to type less 😏&lt;/p&gt;
+
+&lt;p&gt;There are also &lt;strong&gt;yield&lt;/strong&gt; and &lt;strong&gt;proc&lt;/strong&gt; that I want to investigate more but I’ll leave that for a future date for easier digestion.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;-Shunshun&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">I had my first encounter with lambda the other day when I was coding out my portfolio project and was very intrigued by it. Not going to lie, the reason was that it has a very funny name. I decided to do some investigation to get to know it a little bit more.</summary></entry><entry><title type="html">How to Survive Long Hours of Work</title><link href="http://localhost:4000/2020/04/05/how-to-survive-long-hours-of-work.html" rel="alternate" type="text/html" title="How to Survive Long Hours of Work" /><published>2020-04-05T00:00:00-07:00</published><updated>2020-04-05T00:00:00-07:00</updated><id>http://localhost:4000/2020/04/05/how-to-survive-long-hours-of-work</id><content type="html" xml:base="http://localhost:4000/2020/04/05/how-to-survive-long-hours-of-work.html">&lt;p&gt;This week, the toll of overworking finally caught up to me. I felt tired and exhausted by the end of the week. I want to micro improve my life so that I can cope with it better because coding from the time you get up till you go to sleep seems like it’s destroying my health.&lt;/p&gt;
 
 &lt;h3 id=&quot;different-areas-of-improvement&quot;&gt;Different areas of improvement&lt;/h3&gt;
 
@@ -14,7 +44,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;Get a wireless charging pad for your phone if you’re the type of person like me where you forget to plug in your phone at night&lt;/li&gt;
-  &lt;li&gt;Have reminders set for things you don’t want to clutter your brains with&lt;/li&gt;
+  &lt;li&gt;Have reminders set for things you don’t want to clutter your mind with&lt;/li&gt;
   &lt;li&gt;Have a work timer so that you can take breaks promptly&lt;/li&gt;
 &lt;/ul&gt;
 

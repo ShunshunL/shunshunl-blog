@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Lambda Explained</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Lambda Explained</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Lambda Explained" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I had my first encounter with lambda the other day when I was coding out my portfolio project and was very intrigued by it. Not going to lie, the reason was that it has a very funny name. I decided to do some investigation to get to know it a little bit more." />
+<meta property="og:description" content="I had my first encounter with lambda the other day when I was coding out my portfolio project and was very intrigued by it. Not going to lie, the reason was that it has a very funny name. I decided to do some investigation to get to know it a little bit more." />
+<link rel="canonical" href="http://localhost:4000/2020/04/10/lambda-explained.html" />
+<meta property="og:url" content="http://localhost:4000/2020/04/10/lambda-explained.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-10T00:00:00-07:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"http://localhost:4000/2020/04/10/lambda-explained.html","headline":"Lambda Explained","dateModified":"2020-04-10T00:00:00-07:00","datePublished":"2020-04-10T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/10/lambda-explained.html"},"description":"I had my first encounter with lambda the other day when I was coding out my portfolio project and was very intrigued by it. Not going to lie, the reason was that it has a very funny name. I decided to do some investigation to get to know it a little bit more.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="texture-black">
+    <div class="container"></div><div class="container">
+	<h1>Lambda Explained</h1>
+	<h4 class="post-description"></h4>
+	<div class="post-date" style="margin-top:20px">
+		Published on Apr 10, 2020
+	</div>
+	<ul class="post-tags"></ul>
+</div>
+</header>
+  <main>
+    <div class="container">
+      <div class="post-container">
+          <p>I had my first encounter with lambda the other day when I was coding out my portfolio project and was very intrigued by it. Not going to lie, the reason was that it has a very funny name. I decided to do some investigation to get to know it a little bit more.</p>
+
+<h2 id="an-introduction-to-lambda">An Introduction to Lambda</h2>
+
+<p>A <strong>lambda</strong> is a way to define a block and parameters with “= -&gt;” syntax.</p>
+
+<p>Interestingly, defining a lambda won’t run the code inside, you have to use the <strong>call</strong> method.</p>
+<blockquote>
+  <p>For example:</p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">my_lambda</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"This is a lambda"</span> <span class="p">}</span>
+  <span class="n">my_lambda</span><span class="p">.</span><span class="nf">call</span>
+
+  <span class="c1"># "This is a lambda"</span></code></pre></figure>
+
+<h3 id="lambda-can-also-take-arguments">Lambda can also take arguments:</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">divides_by_two</span> <span class="o">=</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="p">}</span>
+  <span class="n">divides_by_two</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+  <span class="c1"># 2.5</span></code></pre></figure>
+
+<p><br />
+😎 Very cool. I just found a new way to type less 😏</p>
+
+<p>There are also <strong>yield</strong> and <strong>proc</strong> that I want to investigate more but I’ll leave that for a future date for easier digestion.</p>
+
+<p><em>-Shunshun</em></p>
+
+<p><br /></p>
+
+      </div>
+
+        <!-- Configure Disqus --></div>
+  </main></body>
+</html>
