@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Null Object Pattern</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Null Object Pattern</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Null Object Pattern" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I learned about the Null Object pattern while working on my portfolio website." />
+<meta property="og:description" content="I learned about the Null Object pattern while working on my portfolio website." />
+<link rel="canonical" href="http://localhost:4000/2020/04/13/null-object-pattern.html" />
+<meta property="og:url" content="http://localhost:4000/2020/04/13/null-object-pattern.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-13T00:00:00-07:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"http://localhost:4000/2020/04/13/null-object-pattern.html","headline":"Null Object Pattern","dateModified":"2020-04-13T00:00:00-07:00","datePublished":"2020-04-13T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/13/null-object-pattern.html"},"description":"I learned about the Null Object pattern while working on my portfolio website.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="texture-black">
+    <div class="container"></div><div class="container">
+	<h1>Null Object Pattern</h1>
+	<h4 class="post-description"></h4>
+	<div class="post-date" style="margin-top:20px">
+		Published on Apr 13, 2020
+	</div>
+	<ul class="post-tags"></ul>
+</div>
+</header>
+  <main>
+    <div class="container">
+      <div class="post-container">
+          <p>I learned about the Null Object pattern while working on my portfolio website.</p>
+
+<p>Null Object reflects a do nothing relationship. It is implemented to replace <strong>if</strong> check for a null value. This can be used to provide default behavior in case data is not available.</p>
+
+<p>This is a code example I used in my portfolio site:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">def</span> <span class="nf">current_user</span> 
+    <span class="k">super</span> <span class="o">||</span>  <span class="n">guest_user</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">guest_user</span>
+    <span class="no">OpenStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Guest User"</span><span class="p">,</span> <span class="ss">first_name: </span><span class="s2">"Guest"</span><span class="p">,</span> <span class="ss">last_name: </span><span class="s2">"User"</span><span class="p">,</span> <span class="ss">email: </span><span class="s2">"guest@example.com"</span><span class="p">)</span>
+  <span class="k">end</span></code></pre></figure>
+
+<p>The method <strong>current_user</strong> is the example for Null Object Pattern. It doesn’t do anything unless the <strong>current_user</strong> doesn’t exist. This way, it’s way easier to change code later on because everything is organized and easy to find.</p>
+
+<p><strong>In conclusion</strong>, making a method to do nothing other than to handle null objects is awesome because it is a more elegant way of coding. It makes it easier to find and change later on and if you set it in the parent file you could set it once and not worry about setting it in all the child files.</p>
+
+<p>The lazy person in me is super excited to learn this so that my code in the future will be more modular and easier to maintain and change.</p>
+
+<p><strong>-Shunshun</strong></p>
+
+      </div>
+
+        <!-- Configure Disqus --></div>
+  </main></body>
+</html>
