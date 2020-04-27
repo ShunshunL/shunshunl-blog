@@ -2,19 +2,19 @@
 layout: post
 title: "How Promise Works in JavaScript"
 ---
-In this blog we'll look into promises in JavaScript. I feel like it's really important to really understand promises expecially as we gain more experiences with JavaScript. 
+In this blog, we'll look into promises in JavaScript. I feel like it's really important to really understand promises especially as we gain more experience with JavaScript. 
 
-We often focus on the handling when working with promises, and a promise is often used with asynchoronous operations like API calls, DB operations or IO calls. The most important parts to understand of a promise are creating and handling. Let's start by looking into the creation of a promise: 
+We often focus on the handling when working with promises, and a promise is often used with asynchronous operations like API calls, DB operations ,or IO calls. The most important parts to understand of a promise are creating and handling. Let's start by looking into the creation of a promise: 
 
 {% highlight javascript %}
   new Promise( function(resolve, reject) { ... } );
 {% endhighlight %}
 
-When creating a promise we pass a function that takes two params, which are in turn two functions. When a promise is complete, either a reject or resolve is called. These represents the key parts of a promise. The success of a promise is usually associated with resolve, and the faulting state is often associated with reject depending on the point of view. 
+When creating a promise we pass a function that takes two params, which are in turn two functions. When a promise is complete, either a reject or resolve is called. These represent the key parts of a promise. The success of a promise is usually associated with resolve, and the faulting state is often associated with reject depending on the point of view. 
 
 ### Resolve and Reject 
 
-Let's look at a real life example, like when a friend has made us a promise: 
+Let's look at a real-life example, like when a friend has made us a promise: 
 
 {% highlight javascript %}
   const friendKeepsPromise = true;
@@ -31,7 +31,7 @@ Let's look at a real life example, like when a friend has made us a promise:
 
 <br>
 
-In this case the promise would be resolved right away to "My friend kept their promise". Simple right?
+In this case, the promise would be resolved right away to "My friend kept their promise". Simple right?
 
 {% highlight javascript %}
   Promise {<resolved>: "My friend kept their promise"}
@@ -150,7 +150,7 @@ This image is really useful to me. It shows the flow of `.catch()` and `.then()`
 Here you can see that `.catch()` and `.then()` also return a Promise, meaning they can be chained.
 
 ### In Summary: 
-- Use `Promise` when handling asynchorous code 
+- Use `Promise` when handling asynchronous code 
 - Always implement `.then()` and `.catch()`
 - You can have multiple handlers of a promise 
 - If you want code to execute disregards whether the promise is rejected or fulfilled, use `.finally()`
