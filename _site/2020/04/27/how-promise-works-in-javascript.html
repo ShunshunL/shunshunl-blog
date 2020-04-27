@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>How Promise Works in JavaScript</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How Promise Works in JavaScript</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="How Promise Works in JavaScript" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this blog we’ll look into promises in JavaScript. I feel like it’s really important to really understand promises expecially as we gain more experiences with JavaScript." />
+<meta property="og:description" content="In this blog we’ll look into promises in JavaScript. I feel like it’s really important to really understand promises expecially as we gain more experiences with JavaScript." />
+<link rel="canonical" href="http://localhost:4000/2020/04/27/how-promise-works-in-javascript.html" />
+<meta property="og:url" content="http://localhost:4000/2020/04/27/how-promise-works-in-javascript.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-27T00:00:00-07:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"http://localhost:4000/2020/04/27/how-promise-works-in-javascript.html","headline":"How Promise Works in JavaScript","dateModified":"2020-04-27T00:00:00-07:00","datePublished":"2020-04-27T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/27/how-promise-works-in-javascript.html"},"description":"In this blog we’ll look into promises in JavaScript. I feel like it’s really important to really understand promises expecially as we gain more experiences with JavaScript.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+  <header class="texture-black">
+    <div class="container"></div><div class="container">
+	<h1>How Promise Works in JavaScript</h1>
+	<h4 class="post-description"></h4>
+	<div class="post-date" style="margin-top:20px">
+		Published on Apr 27, 2020
+	</div>
+	<ul class="post-tags"></ul>
+</div>
+</header>
+  <main>
+    <div class="container">
+      <div class="post-container">
+          <p>In this blog we’ll look into promises in JavaScript. I feel like it’s really important to really understand promises expecially as we gain more experiences with JavaScript.</p>
+
+<p>We often focus on the handling when working with promises, and a promise is often used with asynchoronous operations like API calls, DB operations or IO calls. The most important parts to understand of a promise are creating and handling. Let’s start by looking into the creation of a promise:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">);</span></code></pre></figure>
+
+<p>When creating a promise we pass a function that takes two params, which are in turn two functions. When a promise is complete, either a reject or resolve is called. These represents the key parts of a promise. The success of a promise is usually associated with resolve, and the faulting state is often associated with reject depending on the point of view.</p>
+
+<h3 id="resolve-and-reject">Resolve and Reject</h3>
+
+<p>Let’s look at a real life example, like when a friend has made us a promise:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">friendKeepsPromise</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">friendsPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">friendKeepsPromise</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">My friend kept their promise</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">My friend is a liar</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">friendsPromise</span><span class="p">)</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>In this case the promise would be resolved right away to “My friend kept their promise”. Simple right?</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nb">Promise</span> <span class="p">{</span><span class="o">&lt;</span><span class="nx">resolved</span><span class="o">&gt;</span><span class="p">:</span> <span class="dl">"</span><span class="s2">My friend kept their promise</span><span class="dl">"</span><span class="p">}</span>
+         <span class="nl">__proto__</span><span class="p">:</span> <span class="nb">Promise</span>
+         <span class="p">[[</span><span class="nx">PromiseStatus</span><span class="p">]]:</span> <span class="dl">"</span><span class="s2">resolved</span><span class="dl">"</span>
+         <span class="p">[[</span><span class="nx">PromiseValue</span><span class="p">]]:</span> <span class="dl">"</span><span class="s2">My friend kept their promise</span><span class="dl">"</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>Additionally, a promise can have two other states. The pending state for this promise would look like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nb">Promise</span> <span class="p">{</span><span class="o">&lt;</span><span class="nx">pending</span><span class="o">&gt;</span><span class="p">}</span>
+         <span class="nl">__proto__</span><span class="p">:</span> <span class="nb">Promise</span>
+         <span class="p">[[</span><span class="nx">PromiseStatus</span><span class="p">]]:</span> <span class="dl">"</span><span class="s2">pending</span><span class="dl">"</span>
+         <span class="p">[[</span><span class="nx">PromiseValue</span><span class="p">]]:</span> <span class="kc">undefined</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>While the rejected state would look like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nb">Promise</span> <span class="p">{</span><span class="o">&lt;</span><span class="nx">rejected</span><span class="o">&gt;</span><span class="p">:</span> <span class="dl">"</span><span class="s2">My friend is a liar</span><span class="dl">"</span><span class="p">}</span>
+         <span class="nl">__proto__</span><span class="p">:</span> <span class="nb">Promise</span>
+         <span class="p">[[</span><span class="nx">PromiseStatus</span><span class="p">]]:</span> <span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span>
+         <span class="p">[[</span><span class="nx">PromiseValue</span><span class="p">]]:</span> <span class="dl">"</span><span class="s2">My friend is a liar</span><span class="dl">"</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="prototypes">Prototypes</h3>
+
+<p>After a promise has been resolved or rejected, we often want to update something. This is where the prototype methods come in. When a promise is in the pending state, these three prototype methods are really handy:</p>
+
+<h3 id="promiseprototypethen">Promise.prototype.then()</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then">Link to documentation</a> 
+<br /></p>
+
+<p>Let’s add a <code class="highlighter-rouge">setTimeout()</code> in our code to use <code class="highlighter-rouge">then()</code>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">friendKeepsPromise</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">friendsPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">friendKeepsPromise</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">My friend kept their promise</span><span class="dl">"</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">My friend is a liar</span><span class="dl">"</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">friendsPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">message</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">));</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="promiseprototypecatch">Promise.prototype.catch()</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch">Link to documentation</a> 
+<br /></p>
+
+<p>If a promise if rejected with an error:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">friendKeepsPromise</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">friendsPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">friendKeepsPromise</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">My friend kept their promise</span><span class="dl">"</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">My friend is a liar</span><span class="dl">"</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">friendsPromise</span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="promiseprototypefinally">Promise.prototype.finally()</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally">Link to documentation</a> 
+<br /></p>
+
+<p>If <code class="highlighter-rouge">.finally()</code> is implemented, it will call whenever a <code class="highlighter-rouge">Promise</code> is settled, regardless if the promise is rejected or fulfilled. Let’s use it by adding a <code class="highlighter-rouge">waitingOnFriend</code>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">friendKeepsPromise</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">!==</span> <span class="mi">1</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">waitingOnFriend</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">friendsPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">friendKeepsPromise</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">My friend kept their promise</span><span class="dl">"</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">My friend is a liar</span><span class="dl">"</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">friendsPromise</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">message</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">))</span>
+    <span class="p">.</span><span class="k">finally</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">waitingOnFriend</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">})</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>This image is really useful to me. It shows the flow of <code class="highlighter-rouge">.catch()</code> and <code class="highlighter-rouge">.then()</code>:</p>
+
+<p><img src="/assets/promises.png" alt="Flow chart of Promise" /></p>
+
+<p>Here you can see that <code class="highlighter-rouge">.catch()</code> and <code class="highlighter-rouge">.then()</code> also return a Promise, meaning they can be chained.</p>
+
+<h3 id="in-summary">In Summary:</h3>
+<ul>
+  <li>Use <code class="highlighter-rouge">Promise</code> when handling asynchorous code</li>
+  <li>Always implement <code class="highlighter-rouge">.then()</code> and <code class="highlighter-rouge">.catch()</code></li>
+  <li>You can have multiple handlers of a promise</li>
+  <li>If you want code to execute disregards whether the promise is rejected or fulfilled, use <code class="highlighter-rouge">.finally()</code></li>
+  <li>Multiple promises: <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all">Promise.all()</a></strong> ,
+<strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race">Promise.race()</a></strong></li>
+</ul>
+
+<p>Thanks for reading!<br />
+<strong>-Shunshun</strong></p>
+
+<p><br /></p>
+
+
+      </div>
+
+        <!-- Configure Disqus --></div>
+  </main></body>
+</html>
