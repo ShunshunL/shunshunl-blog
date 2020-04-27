@@ -118,7 +118,7 @@ If a promise if rejected with an error:
 [Link to documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally) 
 <br>
 
-If `.finally()` is implemented, it will call whenever a `Promise` is settled, regardless if the promise is rejected or fulfilled. Let's use it by adding a `waitingOnFriend`:
+If `.finally()` is implemented, it will be called whenever a `Promise` is settled, regardless if the promise is rejected or fulfilled. Let's use it by adding a `waitingOnFriend`:
 
 {% highlight javascript %}
   const friendKeepsPromise = Math.floor(Math.random() * 5) !== 1 ? true : false;
@@ -157,7 +157,7 @@ Here you can see that `.catch()` and `.then()` also return a Promise, meaning th
 - Multiple promises: **[Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)** ,
 **[Promise.race()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)**
 
-Thanks for reading!  
+Thanks for reading! 😊   
 **-Shunshun**
 
 <br>
